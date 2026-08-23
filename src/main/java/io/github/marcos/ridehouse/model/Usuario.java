@@ -49,5 +49,4 @@ public class Usuario {
     private boolean aceitouTermos;
 
     private LocalDateTime dataCadastro;
-
 }
