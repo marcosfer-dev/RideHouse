@@ -4,6 +4,8 @@ import io.github.marcos.ridehouse.model.Usuario;
 import io.github.marcos.ridehouse.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class UsuarioService {
 
@@ -22,7 +24,9 @@ public class UsuarioService {
         usuario.setDataNascimento(usuarioRequest.dataNascimento());
         usuario.setTelefone(usuarioRequest.telefone());
         usuario.setGenero(usuarioRequest.genero());
+        usuario.setSenha(usuarioRequest.senha());
         usuario.setAceitouTermos(usuarioRequest.aceitouTermos());
+        usuario.setDataCadastro(LocalDateTime.now());
 
         return usuarioRepository.save(usuario);
     }
